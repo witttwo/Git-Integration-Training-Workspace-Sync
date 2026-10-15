@@ -80,7 +80,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "BarChartF5983CEA542C47889C9DE852B430DE5F.pbiviz.json",
+          "name": "resources/BarChartF5983CEA542C47889C9DE852B430DE5F.pbiviz.json",
           "path": "BarChartF5983CEA542C47889C9DE852B430DE5F.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -91,7 +91,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "BulletChart1443347686880.pbiviz.json",
+          "name": "resources/BulletChart1443347686880.pbiviz.json",
           "path": "BulletChart1443347686880.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -113,7 +113,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "enlightenSlicerB18DC0CE4A1F4BA79CE49FBE40F3965F.pbiviz.json",
+          "name": "resources/enlightenSlicerB18DC0CE4A1F4BA79CE49FBE40F3965F.pbiviz.json",
           "path": "enlightenSlicerB18DC0CE4A1F4BA79CE49FBE40F3965F.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -124,7 +124,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190.pbiviz.json",
+          "name": "resources/PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190.pbiviz.json",
           "path": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -135,7 +135,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B192.pbiviz.json",
+          "name": "resources/PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B192.pbiviz.json",
           "path": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B192.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -146,7 +146,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json",
+          "name": "resources/PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json",
           "path": "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -157,7 +157,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "powerKPI462CE5C2666F4EC8A8BDD7E5587320A3.pbiviz.json",
+          "name": "resources/powerKPI462CE5C2666F4EC8A8BDD7E5587320A3.pbiviz.json",
           "path": "powerKPI462CE5C2666F4EC8A8BDD7E5587320A3.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -168,7 +168,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "TimeBrush1450434005853.pbiviz.json",
+          "name": "resources/TimeBrush1450434005853.pbiviz.json",
           "path": "TimeBrush1450434005853.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
@@ -179,7 +179,7 @@
       "type": "CustomVisual",
       "items": [
         {
-          "name": "Timeline1447991079100.pbiviz.json",
+          "name": "resources/Timeline1447991079100.pbiviz.json",
           "path": "Timeline1447991079100.pbiviz.json",
           "type": "CustomVisualMetadata"
         }
