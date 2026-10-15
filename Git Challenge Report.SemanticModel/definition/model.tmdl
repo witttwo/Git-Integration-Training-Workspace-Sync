@@ -34,7 +34,7 @@ queryGroup 'Query Errors - 09 07 2021 12:50:03'
 extendedProperty TabularEditor_DeploymentMetadata =
 		{
 		  "User": "AzureAD\\PrzemekHaraźny",
-		  "Time": "2021-05-18T12:30:32.355268+02:00",
+		  "Time": "2021-05-18T10:30:32.355268+00:00",
 		  "ClientMachine": "HARRY_LAPTOP",
 		  "DeploymentMode": "SaveUI",
 		  "TabularEditorBuild": "2.16.7781.40242"
@@ -47,8 +47,6 @@ annotation PBI_QueryOrder = ["Currency","Currency Rate","Customer","Sales Order 
 annotation __TEdtr = 1
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","TMDLView_Desktop","DevMode","TMDL-Extension"]
-
-annotation __PBI_ServiceStoredInTmdl = reserved
 
 ref table Customer
 ref table Currency
