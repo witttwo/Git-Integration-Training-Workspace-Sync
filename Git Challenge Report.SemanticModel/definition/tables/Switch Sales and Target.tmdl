@@ -1,0 +1,54 @@
+table 'Switch Sales and Target'
+	lineageTag: 6e271c68-8e57-43cb-9e10-dd65f9876329
+
+	column Name
+		dataType: string
+		lineageTag: c5636fe0-fa50-4a7e-99f8-6a93a4598eb9
+		summarizeBy: none
+		sourceColumn: Name
+		sortByColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Id
+		dataType: int64
+		formatString: 0
+		lineageTag: 915d6a36-c0f5-4a1d-97ce-688bcd5b3c0f
+		summarizeBy: count
+		sourceColumn: Id
+
+		annotation SummarizationSetBy = Automatic
+
+	column Show_measure_name
+		dataType: string
+		lineageTag: 0596ffdf-5e55-4502-a440-574d11128a63
+		summarizeBy: none
+		sourceColumn: Show_measure_name
+		sortByColumn: Show_measure_name_order
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Show_measure_name_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e2706e4-d394-4088-8db0-894fad77bca0
+		summarizeBy: sum
+		sourceColumn: Show_measure_name_order
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Switch Sales and Target-9e80889b-0932-45d3-829b-062c41e642c4' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCk7MSS1W0lEyAGLH5JLSxBwQz1ApVgcqpxAQCRbQUQooyswvUohMTSwCcozBKkISi9JTS4BcIyB2Kk2BcUByYYlFmYl5yakKJfkKEHUKqmCNOggpjbJiBYg2TaCwiVJsLAA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Name = _t, Id = _t, Show_measure_name = _t, Show_measure_name_order = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Name", type text}, {"Id", Int64.Type}, {"Show_measure_name_order", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,205 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.3.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "Fluent2-CY26SU07",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Git_Challenge04055343382409393.json",
+      "reportVersionAtImport": {
+        "visual": "2.11.0",
+        "report": "3.4.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          },
+          "visible": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "ChicletSlicer1448559807354"
+  ],
+  "resourcePackages": [
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Git_Challenge04055343382409393.json",
+          "path": "Git_Challenge04055343382409393.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Landing_Page_CEO5390908433379882.png",
+          "path": "Landing_Page_CEO5390908433379882.png",
+          "type": "Image"
+        }
+      ]
+    },
+    {
+      "name": "BarChartF5983CEA542C47889C9DE852B430DE5F",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "BarChartF5983CEA542C47889C9DE852B430DE5F.pbiviz.json",
+          "path": "BarChartF5983CEA542C47889C9DE852B430DE5F.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "BulletChart1443347686880",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "BulletChart1443347686880.pbiviz.json",
+          "path": "BulletChart1443347686880.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "Fluent2-CY26SU07",
+          "path": "BaseThemes/Fluent2-CY26SU07.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "enlightenSlicerB18DC0CE4A1F4BA79CE49FBE40F3965F",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "enlightenSlicerB18DC0CE4A1F4BA79CE49FBE40F3965F.pbiviz.json",
+          "path": "enlightenSlicerB18DC0CE4A1F4BA79CE49FBE40F3965F.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190.pbiviz.json",
+          "path": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B190.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B192",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B192.pbiviz.json",
+          "path": "PBI_3AGSystems_0B9C9FBA_15A2_4A94_8AE4_8F778869B192.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json",
+          "path": "PBI_CV_16948668_E17D_454B_8664_2F2C470EA8C1.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "powerKPI462CE5C2666F4EC8A8BDD7E5587320A3",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "powerKPI462CE5C2666F4EC8A8BDD7E5587320A3.pbiviz.json",
+          "path": "powerKPI462CE5C2666F4EC8A8BDD7E5587320A3.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "TimeBrush1450434005853",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "TimeBrush1450434005853.pbiviz.json",
+          "path": "TimeBrush1450434005853.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "Timeline1447991079100",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "Timeline1447991079100.pbiviz.json",
+          "path": "Timeline1447991079100.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "isPersistentUserStateDisabled": true,
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowInlineExploration": true,
+    "useEnhancedTooltips": true,
+    "disableFilterPaneSearch": true
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}

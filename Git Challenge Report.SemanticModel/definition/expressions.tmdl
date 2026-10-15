@@ -1,0 +1,59 @@
+expression _Database = "AdventureWorks2019" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 7ad8b80d-f370-49b1-a3e1-ef4e0ae35417
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression _Server = "ad-works.database.windows.net" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5a2f929b-9004-41f3-b033-d7bdbf3a6d57
+	queryGroup: Parameters
+
+	annotation PBI_ResultType = Text
+
+expression 'Product Category' =
+		let
+		    Source = Sql.Database(_Server, _Database),
+		    Production_ProductCategory1 = Source{[Schema="Production",Item="ProductCategory"]}[Data]
+		in
+		    Production_ProductCategory1
+	lineageTag: 74daff4c-0f97-4084-bd2b-88bf781bc74b
+	queryGroup: Production
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Product Subcategory' =
+		let
+		    Source = Sql.Database(_Server, _Database),
+		    Production_ProductSubcategory1 = Source{[Schema="Production",Item="ProductSubcategory"]}[Data]
+		in
+		    Production_ProductSubcategory1
+	lineageTag: 503ca3a7-6984-4134-8b38-f901e1d17153
+	queryGroup: Production
+
+	annotation PBI_ResultType = Table
+
+expression 'Errors in Calendar' =
+		let
+		Source = Calendar,
+		  #"Detected Type Mismatches" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Source, Table.ColumnsOfType(Source, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "The type of the value does not match the type of the column.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Source, pairs),
+		  #"Added Index" = Table.AddIndexColumn(#"Detected Type Mismatches", "Row Number" ,1),
+		  #"Kept Errors" = Table.SelectRowsWithErrors(#"Added Index", {"Date", "Year", "Start of Year", "End of Year", "Month", "Start of Month", "End of Month", "Days in Month", "Day", "Day Name", "Day of Week", "Day of Year", "Month Name", "Quarter", "Start of Quarter", "End of Quarter", "Week of Year", "Week of Month", "Start of Week", "End of Week", "DateSwitch", "Month Name Year"}),
+		  #"Reordered Columns" = Table.ReorderColumns(#"Kept Errors", {"Row Number", "Date", "Year", "Start of Year", "End of Year", "Month", "Start of Month", "End of Month", "Days in Month", "Day", "Day Name", "Day of Week", "Day of Year", "Month Name", "Quarter", "Start of Quarter", "End of Quarter", "Week of Year", "Week of Month", "Start of Week", "End of Week", "DateSwitch", "Month Name Year"})
+		in
+		  #"Reordered Columns"
+	lineageTag: 06d7d52d-c93b-4d13-92a1-35f918358e63
+	queryGroup: 'Query Errors - 09 07 2021 12:50:03'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

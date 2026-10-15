@@ -1,0 +1,51 @@
+table 'Sales Reason'
+	lineageTag: 33485892-cdbd-4238-9ee4-bd7d09490ae5
+
+	column SalesReasonID
+		dataType: int64
+		formatString: 0
+		lineageTag: 86bc571c-83d6-45c9-a317-f209587c362a
+		summarizeBy: none
+		sourceColumn: SalesReasonID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 4e76736a-9f32-4046-bd6e-206adfc5776d
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ReasonType
+		dataType: string
+		lineageTag: e76caac3-ca95-45a4-8459-5b27c485b177
+		summarizeBy: none
+		sourceColumn: ReasonType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: dc8cffbb-b5ca-4be5-a4fa-d025fe09e907
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Reason-9a2d32d6-1789-40ea-a67d-6394ac221975' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_SalesReason1 = Source{[Schema="Sales",Item="SalesReason"]}[Data]
+				in
+				    Sales_SalesReason1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

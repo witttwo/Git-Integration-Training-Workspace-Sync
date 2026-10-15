@@ -1,0 +1,44 @@
+table '_Perspective Switch'
+	lineageTag: c03b0487-531f-46f5-84ac-796aafd289a3
+
+	column Type
+		dataType: string
+		lineageTag: c12481f8-d158-4840-897c-853486031cb7
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column PerspectiveOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: c3314241-d93c-4086-9efd-39606f189d01
+		summarizeBy: sum
+		sourceColumn: PerspectiveOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column Perspective
+		dataType: string
+		lineageTag: d2a1ee42-6fb0-4e7d-8874-7f5d7a40a749
+		summarizeBy: none
+		sourceColumn: Perspective
+		sortByColumn: PerspectiveOrder
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition '_Perspective Switch-d9b8b84f-80ac-4ac0-833f-780372d600f5' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45W8g1xUdJRMgRi3/y8kgylWJ1opUiwmBEQg1ixsQA=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Type = _t, PerspectiveOrder = _t, Perspective = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"PerspectiveOrder", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

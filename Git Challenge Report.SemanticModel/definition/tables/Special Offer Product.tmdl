@@ -1,0 +1,50 @@
+table 'Special Offer Product'
+	lineageTag: 4369fccd-1e74-4d6a-96be-bfc93cb278a5
+
+	column SpecialOfferID
+		dataType: int64
+		formatString: 0
+		lineageTag: 35e075c6-e4dc-48d8-9ab6-bc77cf7ff717
+		summarizeBy: count
+		sourceColumn: SpecialOfferID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: f054981f-914e-4b92-95fb-1a8bfb9912f9
+		summarizeBy: count
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: 3255187c-de01-4f78-b42b-95a19d89a3c3
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a3271579-27f9-4bdb-8580-acbc630a2edf
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Special Offer Product-509e6426-8225-464a-bca7-2cd2fc02ec47' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_SpecialOfferProduct1 = Source{[Schema="Sales",Item="SpecialOfferProduct"]}[Data]
+				in
+				    Sales_SpecialOfferProduct1
+
+	annotation PBI_ResultType = Table
+

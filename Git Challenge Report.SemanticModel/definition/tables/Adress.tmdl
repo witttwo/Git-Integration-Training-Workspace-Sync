@@ -1,0 +1,151 @@
+table Adress
+	lineageTag: da15008b-af35-44ae-ae46-4abc49a17edc
+
+	column AddressID
+		dataType: int64
+		formatString: 0
+		lineageTag: 3e4ef7e2-3f63-4bd2-8240-19622a98ea7d
+		summarizeBy: none
+		sourceColumn: AddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Address
+		dataType: string
+		lineageTag: d33d9be4-2491-4134-8f27-eab4e28a4fd1
+		dataCategory: Address
+		summarizeBy: none
+		sourceColumn: Address
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 9b6249e9-315f-435a-a021-338fe60ec8b1
+		dataCategory: City
+		summarizeBy: none
+		sourceColumn: City
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: bb6ada9a-d57e-4211-9beb-26f49f2688fd
+		dataCategory: PostalCode
+		summarizeBy: none
+		sourceColumn: Postal Code
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: double
+		lineageTag: 0b17a00e-b6c0-40a3-b481-967a3b9ae26a
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Latitude
+		dataType: double
+		lineageTag: f244eaac-82a3-466d-b3f3-369174e4ad9e
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'State Province'
+		dataType: string
+		lineageTag: f53e4143-36b8-421e-896f-d0298c1d416b
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: State Province
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: e5c3b7c1-ba9e-4ae2-8516-2000ad240fef
+		dataCategory: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 6aa9185f-5ac9-47f5-b79e-ad679a92a179
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Location
+		dataType: string
+		lineageTag: 500f63be-9c58-4a50-9cdc-1d7b6b95a82f
+		summarizeBy: none
+		sourceColumn: Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Location Full'
+		dataType: string
+		lineageTag: 7b990b77-efbc-49d1-956f-9b9bf604465b
+		summarizeBy: none
+		sourceColumn: Location Full
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Adress Full'
+		dataType: string
+		lineageTag: 318b23ec-cb3a-4f20-bed6-2493f36bac4f
+		summarizeBy: none
+		sourceColumn: Adress Full
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Adress-4331250e-487b-41dd-b8d2-34571b347523 = m
+		mode: import
+		queryGroup: Person
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Person_Address = Source{[Schema="Person",Item="Address"]}[Data],
+				    #"Removed Other Columns" = Table.SelectColumns(Person_Address,{"AddressID", "AddressLine1", "City", "PostalCode", "SpatialLocation", "Person.StateProvince"}),
+				    #"Expanded Person.StateProvince1" = Table.ExpandRecordColumn(#"Removed Other Columns", "Person.StateProvince", {"Name", "Person.CountryRegion"}, {"Person.StateProvince.Name", "Person.StateProvince.Person.CountryRegion"}),
+				    #"Expanded Person.StateProvince.Person.CountryRegion" = Table.ExpandRecordColumn(#"Expanded Person.StateProvince1", "Person.StateProvince.Person.CountryRegion", {"Name", "Sales.SalesTerritory"}, {"Person.StateProvince.Person.CountryRegion.Name", "Person.StateProvince.Person.CountryRegion.Sales.SalesTerritory"}),
+				    #"Expanded Person.StateProvince.Person.CountryRegion.Sales.SalesTerritory" = Table.ExpandTableColumn(#"Expanded Person.StateProvince.Person.CountryRegion", "Person.StateProvince.Person.CountryRegion.Sales.SalesTerritory", {"Group"}, {"Person.StateProvince.Person.CountryRegion.Sales.SalesTerritory.Group"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Expanded Person.StateProvince.Person.CountryRegion.Sales.SalesTerritory"),
+				    #"Extracted Text Between Delimiters" = Table.TransformColumns(#"Removed Duplicates", {{"SpatialLocation", each Text.BetweenDelimiters(_, "(", ")"), type text}}),
+				    #"Split Column by Delimiter" = Table.SplitColumn(#"Extracted Text Between Delimiters", "SpatialLocation", Splitter.SplitTextByEachDelimiter({" "}, QuoteStyle.Csv, false), {"SpatialLocation.1", "SpatialLocation.2"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column by Delimiter",{{"SpatialLocation.1", type number}, {"SpatialLocation.2", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"SpatialLocation.1", "Longitude"}, {"SpatialLocation.2", "Latitude"}, {"AddressLine1", "Address"}, {"PostalCode", "Postal Code"}, {"Person.StateProvince.Name", "State Province"}, {"Person.StateProvince.Person.CountryRegion.Name", "Country"}, {"Person.StateProvince.Person.CountryRegion.Sales.SalesTerritory.Group", "Region"}}),
+				    #"Added Custom" = Table.AddColumn(#"Renamed Columns", "Location Full", each [Country]&", "&[City]&", "&[Address]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "Location", each [Country]&", "&[City]),
+				    #"Added Custom2" = Table.AddColumn(#"Added Custom1", "Adress Full", each [Country]&", "& [Postal Code]&", "&[City]&", "&[Address])
+				in
+				    #"Added Custom2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

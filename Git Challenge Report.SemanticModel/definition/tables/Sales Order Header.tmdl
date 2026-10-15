@@ -1,0 +1,257 @@
+table 'Sales Order Header'
+	lineageTag: 29fd62b6-dcbf-4460-85e6-25b7cb04e1d0
+
+	column SalesOrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 287794c1-a813-41ab-bcb7-69d8e224601d
+		summarizeBy: none
+		sourceColumn: SalesOrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column RevisionNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: c0f1207a-5d99-4e17-a17b-b5a135c67e11
+		summarizeBy: sum
+		sourceColumn: RevisionNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		lineageTag: 3edd87ad-3313-45a8-8688-b8c10c2cfb32
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column DueDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 97db6193-173c-400e-bd41-eec4424cbb0c
+		summarizeBy: none
+		sourceColumn: DueDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6c887c20-4487-40cf-b14a-c02ee8fdb411
+		summarizeBy: none
+		sourceColumn: ShipDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: int64
+		formatString: 0
+		lineageTag: e5f5de90-ac3e-4071-92ec-cd73d48ef987
+		summarizeBy: sum
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnlineOrderFlag
+		dataType: string
+		lineageTag: 7ee1e7b4-95cd-4f33-bf06-bb95f433c63b
+		summarizeBy: none
+		sourceColumn: OnlineOrderFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderNumber
+		dataType: string
+		lineageTag: fd27220c-19af-4141-805f-133a5b440ecf
+		summarizeBy: none
+		sourceColumn: SalesOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column PurchaseOrderNumber
+		dataType: string
+		lineageTag: 38d9bcaa-5733-4d33-b4f3-03bde3408249
+		summarizeBy: none
+		sourceColumn: PurchaseOrderNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountNumber
+		dataType: string
+		lineageTag: 45e7033e-47fb-44bd-a65c-35db536210af
+		summarizeBy: none
+		sourceColumn: AccountNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomerID
+		dataType: int64
+		formatString: 0
+		lineageTag: ff64c65c-aef8-41a1-a5ec-439c61fb70be
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesPersonID
+		dataType: int64
+		formatString: 0
+		lineageTag: 1e641e9c-0a47-4eec-a7c6-c84a7306b4bc
+		summarizeBy: count
+		sourceColumn: SalesPersonID
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 50a65871-919b-4743-8c7b-86e678d8a2ab
+		summarizeBy: count
+		sourceColumn: TerritoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillToAddressID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4313ed2c-9abd-4a54-8345-552e73d26176
+		summarizeBy: count
+		sourceColumn: BillToAddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipToAddressID
+		dataType: int64
+		formatString: 0
+		lineageTag: cff96b3e-2162-48a7-8824-b2c212b89350
+		summarizeBy: none
+		sourceColumn: ShipToAddressID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShipMethodID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e6b32c2-3698-4a64-9d25-4dd9f9e4dd78
+		summarizeBy: count
+		sourceColumn: ShipMethodID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditCardID
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f486666-8f95-40f2-b4c0-25bb5ca54551
+		summarizeBy: count
+		sourceColumn: CreditCardID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreditCardApprovalCode
+		dataType: string
+		lineageTag: a3eb0e6a-98b2-42ec-b68d-336ce0a2ce21
+		summarizeBy: none
+		sourceColumn: CreditCardApprovalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyRateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c638a94-0e7f-49e7-9d82-9346be1da639
+		summarizeBy: none
+		sourceColumn: CurrencyRateID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubTotal
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: a19d66b2-42ae-4628-a129-206451fd2f0d
+		summarizeBy: sum
+		sourceColumn: SubTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column TaxAmt
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: 2b62da0a-8a72-44e2-b112-3742b67a1148
+		summarizeBy: sum
+		sourceColumn: TaxAmt
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column Freight
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: d52a259b-8b9e-4eff-9b87-1f70bcbe55bc
+		summarizeBy: sum
+		sourceColumn: Freight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column TotalDue
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: c4230a6c-e23b-4244-b5e9-cc311f4a9d55
+		summarizeBy: sum
+		sourceColumn: TotalDue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column Comment
+		dataType: string
+		lineageTag: c4efe384-f7af-4cc1-bfa2-83b9194c6431
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: 84fa3d56-7a09-41de-992c-589a042d6af9
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 43395379-abb4-40ed-8f3b-6d16447a251a
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderType = IF('Sales Order Header'[OnlineOrderFlag]="1","Online","Store")
+		lineageTag: 4dcd9415-2734-420e-9dd4-5243b4e8d04a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Order Header-767e0230-0689-400f-b65f-e6b240795ff8' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_SalesOrderHeader = Source{[Schema="Sales",Item="SalesOrderHeader"]}[Data]
+				in
+				    Sales_SalesOrderHeader
+
+	annotation PBI_ResultType = Table
+

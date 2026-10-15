@@ -1,0 +1,57 @@
+table _Measures
+	lineageTag: a7764b07-bbe2-4198-a83f-011127bd5c8d
+
+	measure 0 = 0
+		formatString: 0
+		lineageTag: 941e8eab-32e4-4b13-9009-119386b5840e
+
+	measure Actuals =
+			
+			SUM('Sales Order Detail'[LineTotal]) //sum of line totals in sales order detail.
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: bd2d0ab3-cdd3-45a1-b038-2e8ab4e07a7c
+
+	measure Budget =
+			//placeholder, no clear budget table present
+			//SUM('Budget'[Budget Amount])
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8af23d36-2570-4ebb-9989-fbabc27bf41f
+
+	measure 'Variance vs Budget' =
+			//placeholder, AI suggested
+			VAR _budget = [Budget]
+			VAR _actuals = COALESCE([Actuals], 0)
+			RETURN
+			    IF(
+			        ISBLANK(_budget),
+			        BLANK(),
+			        _actuals - _budget
+			    )
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 24d49f06-6b5b-41b3-aac3-23a229fd5f92
+
+	measure 'Variance (%)' =
+			//placeholder, AI suggested
+			VAR _budget = [Budget]
+			VAR _actuals = COALESCE([Actuals], 0)
+			RETURN
+			    IF(
+			        ISBLANK(_budget),
+			        BLANK(),
+			        DIVIDE(_actuals - _budget, _budget)
+			    )
+		formatString: 0%;-0%;0%
+		lineageTag: b74807e3-70e3-436c-9b02-403af90e1467
+
+	partition _Measures-f8cb0698-0aa3-4cb4-a649-10fe38b9c527 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WMlSKjQUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

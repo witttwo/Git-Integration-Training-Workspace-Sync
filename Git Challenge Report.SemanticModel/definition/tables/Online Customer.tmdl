@@ -1,0 +1,163 @@
+table 'Online Customer'
+	lineageTag: 1218cde6-86ef-4541-9994-4040c3eb63dc
+
+	column BusinessEntityID
+		dataType: int64
+		formatString: 0
+		lineageTag: 11f0441b-9337-43d9-a4f3-566fd81601c2
+		summarizeBy: count
+		sourceColumn: BusinessEntityID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: d62400c0-33d3-4e26-92fd-270b782f2dfe
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column FirstName
+		dataType: string
+		lineageTag: b45a600d-9577-4ff8-b84a-d5adbccfb317
+		summarizeBy: none
+		sourceColumn: FirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleName
+		dataType: string
+		lineageTag: 0227b970-0381-4553-a12d-26f1afa066c3
+		summarizeBy: none
+		sourceColumn: MiddleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastName
+		dataType: string
+		lineageTag: 28defdb8-7a27-42d5-b46e-39fed46ac1d2
+		summarizeBy: none
+		sourceColumn: LastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suffix
+		dataType: string
+		lineageTag: 539da8d2-097a-418a-b04e-0cfa43723785
+		summarizeBy: none
+		sourceColumn: Suffix
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhoneNumber
+		dataType: string
+		lineageTag: 747a83a7-4640-49c4-9ad5-9db0450beb4e
+		summarizeBy: none
+		sourceColumn: PhoneNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column PhoneNumberType
+		dataType: string
+		lineageTag: 6cb78a38-d017-440a-bd0c-734dfe05a4d5
+		summarizeBy: none
+		sourceColumn: PhoneNumberType
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailAddress
+		dataType: string
+		lineageTag: 77c0c499-3ec4-446d-b10d-3f8dda6f45c7
+		summarizeBy: none
+		sourceColumn: EmailAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column EmailPromotion
+		dataType: int64
+		formatString: 0
+		lineageTag: e243f090-0440-42d5-90f4-44a3574e5d22
+		summarizeBy: sum
+		sourceColumn: EmailPromotion
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressType
+		dataType: string
+		lineageTag: 51d48658-63ad-4128-967a-a42258d3b536
+		summarizeBy: none
+		sourceColumn: AddressType
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine1
+		dataType: string
+		lineageTag: e4bae345-e6c2-4074-8d2d-fd4c999f0f6f
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine2
+		dataType: string
+		lineageTag: f0c7167c-cf2e-43ae-8b14-05badf8f1d88
+		summarizeBy: none
+		sourceColumn: AddressLine2
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: b3bced13-b2dc-420d-8aa8-4d8bb3a7bd23
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceName
+		dataType: string
+		lineageTag: 029a506a-90f4-4e4d-9b54-94d708bf99de
+		summarizeBy: none
+		sourceColumn: StateProvinceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 9280f78e-811f-49b9-b360-173a329f87ae
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegionName
+		dataType: string
+		lineageTag: b3e5d2b3-243c-4659-bdf4-c849bbb2c965
+		summarizeBy: none
+		sourceColumn: CountryRegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Demographics
+		dataType: string
+		lineageTag: 22c76a32-0661-4b24-8c35-59f6e7eec0fd
+		summarizeBy: none
+		sourceColumn: Demographics
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Online Customer-e6f4e03e-72ff-4813-92f7-3cddd59755ba' = m
+		mode: import
+		queryGroup: Person
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_vIndividualCustomer = Source{[Schema="Sales",Item="vIndividualCustomer"]}[Data]
+				in
+				    Sales_vIndividualCustomer
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

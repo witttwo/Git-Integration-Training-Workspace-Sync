@@ -1,0 +1,24 @@
+DEFINE
+ 
+var __CountProduct = { COUNTROWS ('Product') }
+ 
+var __SalesActual = { ROUND( [Sales Actuals], 1) }
+
+ 
+VAR tests=
+UNION (
+    ROW (
+        "Value type", "Count of products",
+        "ExpectedValue", 295,
+        "ActualValue", __CountProduct,
+        "Severity", 2
+    ),
+    ROW (
+        "Value type", "Total",
+        "ExpectedValue", 109846381.4,
+        "ActualValue", __SalesActual,
+        "Severity", 1
+    )
+)
+ 
+EVALUATE ADDCOLUMNS(tests, "Passed", ([ExpectedValue] = [ActualValue])*1)

@@ -1,0 +1,138 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
+  "displayName": "CM 3 Help ON",
+  "name": "Bookmark0806a7b4d5ca956796d5",
+  "options": {
+    "applyOnlyToTargetVisuals": true,
+    "targetVisualNames": [
+      "9ccb5b8498c4000d9bab",
+      "1692e44e2093842749d9",
+      "8bf505c4c251c07ee75e",
+      "dc088568bd0461788c62",
+      "f04672e42ded6d9a3043",
+      "1e0709df338e26839abb",
+      "489be9ec63b254b69978",
+      "ce80f4ff5613e70dd04b",
+      "b8e05d5c69a05c741706",
+      "7270764c766bd088d402",
+      "d28e9b604b797ec3aa30",
+      "934773403d7b13978ee5",
+      "ea281be045086063709c",
+      "76c246b770766b8e8c7a"
+    ],
+    "suppressData": true
+  },
+  "explorationState": {
+    "version": "1.3",
+    "activeSection": "ReportSectionb8d471c6a503000303a2",
+    "filters": {
+      "byName": {
+        "Filter31163906e4f70af4ac54": {
+          "name": "Filter31163906e4f70af4ac54",
+          "type": "Categorical",
+          "filter": {
+            "Version": 2,
+            "From": [
+              {
+                "Name": "c",
+                "Entity": "Calendar",
+                "Type": 0
+              }
+            ],
+            "Where": [
+              {
+                "Condition": {
+                  "In": {
+                    "Expressions": [
+                      {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "c"
+                            }
+                          },
+                          "Property": "Year"
+                        }
+                      }
+                    ],
+                    "Values": [
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2020L"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2021L"
+                          }
+                        }
+                      ],
+                      [
+                        {
+                          "Literal": {
+                            "Value": "2019L"
+                          }
+                        }
+                      ]
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Calendar"
+                }
+              },
+              "Property": "Year"
+            }
+          },
+          "howCreated": 1
+        }
+      }
+    },
+    "sections": {
+      "ReportSectionb8d471c6a503000303a2": {
+        "visualContainers": {},
+        "visualContainerGroups": {
+          "d973895ea568575ce537": {
+            "isHidden": true
+          },
+          "9ccb5b8498c4000d9bab": {
+            "isHidden": false
+          }
+        }
+      }
+    },
+    "objects": {
+      "merge": {
+        "outspacePane": [
+          {
+            "properties": {
+              "expanded": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              },
+              "visible": {
+                "expr": {
+                  "Literal": {
+                    "Value": "false"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

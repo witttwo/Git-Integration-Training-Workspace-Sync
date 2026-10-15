@@ -1,0 +1,37 @@
+table 'Product Hierarchy'
+	lineageTag: 4e1f406c-f847-44b0-b159-adecea1ee0f8
+
+	column 'Product Category'
+		lineageTag: cc55b269-c148-465d-9011-69b651d01b58
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Product[Product Category]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		lineageTag: 880afe27-bcff-4d8e-ab9a-6aaa825e8a03
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Type]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Product Hierarchy-4f4ef07d-952d-4790-969c-02afee7611b6' = calculated
+		mode: import
+		source =
+				
+				FILTER(
+				    UNION
+				    (
+				        ADDCOLUMNS(VALUES('Product'[Product Category]), "Type", "Category")
+				    ,
+				        ADDCOLUMNS(VALUES('Product'[Product Subcategory]), "Type", "Subategory")
+				    ,
+				        ADDCOLUMNS(VALUES('Product'[Product Name]), "Type", "Product")
+				    ),
+				    [Product Category] <> BLANK()
+				)
+
+	annotation PBI_Id = b57d8490376c4b4486970762ab4efb20
+

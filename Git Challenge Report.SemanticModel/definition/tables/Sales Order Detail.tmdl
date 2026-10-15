@@ -1,0 +1,126 @@
+table 'Sales Order Detail'
+	lineageTag: cc75e4f2-e1f6-46cf-91e2-e1de36418a4e
+
+	column SalesOrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: ab432972-c8a7-4cc5-8c50-81987be70a87
+		summarizeBy: none
+		sourceColumn: SalesOrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesOrderDetailID
+		dataType: int64
+		formatString: 0
+		lineageTag: 41bd65a9-8f68-49b6-b27f-f4da02820b4b
+		summarizeBy: count
+		sourceColumn: SalesOrderDetailID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CarrierTrackingNumber
+		dataType: string
+		lineageTag: 0271da19-f1db-48ec-8a7f-9425488e7ac4
+		summarizeBy: none
+		sourceColumn: CarrierTrackingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderQty
+		dataType: int64
+		formatString: 0
+		lineageTag: 031569f4-fa5a-4bb3-9f71-33d3fa0a1689
+		summarizeBy: sum
+		sourceColumn: OrderQty
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductID
+		dataType: int64
+		formatString: 0
+		lineageTag: fad96c0c-bbc6-48f2-93c6-2699c667eb88
+		summarizeBy: none
+		sourceColumn: ProductID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpecialOfferID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ea06013-be1a-4f79-8e04-04bd9566032b
+		summarizeBy: count
+		sourceColumn: SpecialOfferID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: 1dedb53c-faaf-494c-93a9-8c6c1e4eee6e
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column UnitPriceDiscount
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 65cb355e-b6d2-4ec2-860f-b88667658406
+		summarizeBy: sum
+		sourceColumn: UnitPriceDiscount
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineTotal
+		dataType: double
+		lineageTag: c7f4b6f5-d57e-4b74-955d-5e5ae250450e
+		summarizeBy: sum
+		sourceColumn: LineTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rowguid
+		dataType: string
+		lineageTag: 8029f786-46a0-4250-8b68-018cea50fa03
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c6d7b375-172e-41a5-ad92-bc72e42eb08c
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sum of Standard Cost' = RELATED('Product'[StandardCost]) * 'Sales Order Detail'[OrderQty]
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: e8e05570-71ad-492b-a56f-9d528169e045
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	partition 'Sales Order Detail-2e992c91-ebf4-4110-bb36-f8d3594bc587' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_SalesOrderDetail1 = Source{[Schema="Sales",Item="SalesOrderDetail"]}[Data]
+				in
+				    Sales_SalesOrderDetail1
+
+	annotation PBI_ResultType = Table
+

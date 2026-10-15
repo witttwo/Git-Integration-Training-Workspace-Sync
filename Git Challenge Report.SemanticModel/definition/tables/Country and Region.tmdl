@@ -1,0 +1,42 @@
+table 'Country and Region'
+	lineageTag: 3cadb2bc-74a7-4c37-af29-81f837ae5907
+
+	column CountryRegionCode
+		dataType: string
+		lineageTag: 590f40d6-efad-4ee0-8083-86dd98a05162
+		summarizeBy: none
+		sourceColumn: CountryRegionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: b68c840a-ccc4-4ad1-8406-26a3813940c7
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6f10ca71-a91f-47f7-aef9-6018cba4f389
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Country and Region-0a2ae79e-863a-48ae-b8f7-1aac459e779f' = m
+		mode: import
+		queryGroup: Person
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Person_CountryRegion1 = Source{[Schema="Person",Item="CountryRegion"]}[Data]
+				in
+				    Person_CountryRegion1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

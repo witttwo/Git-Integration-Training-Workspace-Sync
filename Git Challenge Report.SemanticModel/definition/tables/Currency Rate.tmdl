@@ -1,0 +1,80 @@
+table 'Currency Rate'
+	lineageTag: 05694cd9-93c1-440e-a940-4c047f099afc
+
+	column CurrencyRateID
+		dataType: int64
+		formatString: 0
+		lineageTag: 81c2ae91-b342-4c03-adea-7161bd77ae16
+		summarizeBy: none
+		sourceColumn: CurrencyRateID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyRateDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 95473e95-040f-4503-800a-5136e64cb9ea
+		summarizeBy: none
+		sourceColumn: CurrencyRateDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column FromCurrencyCode
+		dataType: string
+		lineageTag: 49044a70-9227-4897-8b2d-df146c067f64
+		summarizeBy: none
+		sourceColumn: FromCurrencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ToCurrencyCode
+		dataType: string
+		lineageTag: 999445f5-5bbe-44e4-91f5-632aa1ecf4f1
+		summarizeBy: none
+		sourceColumn: ToCurrencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column AverageRate
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: 60f138e6-32ef-4dd3-af50-f633f0841762
+		summarizeBy: sum
+		sourceColumn: AverageRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column EndOfDayRate
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: 81e12a75-91bc-43f1-b0bb-42e9c593ab7c
+		summarizeBy: sum
+		sourceColumn: EndOfDayRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 714a817d-d658-4580-9c4a-911d95214454
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Currency Rate-e015315c-6235-41ba-82a2-5465f9e59fc7' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_CurrencyRate1 = Source{[Schema="Sales",Item="CurrencyRate"]}[Data]
+				in
+				    Sales_CurrencyRate1
+
+	annotation PBI_ResultType = Table
+

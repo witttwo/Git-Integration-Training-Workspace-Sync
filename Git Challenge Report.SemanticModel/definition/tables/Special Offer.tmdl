@@ -1,0 +1,112 @@
+table 'Special Offer'
+	lineageTag: 9b9ad9e0-d05f-4862-a905-d6fae72a57d6
+
+	column SpecialOfferID
+		dataType: int64
+		formatString: 0
+		lineageTag: 64cd544b-0618-4537-99de-24ba6ad93a55
+		summarizeBy: count
+		sourceColumn: SpecialOfferID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 90711321-18d1-4561-b8db-3a5793cad084
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountPct
+		dataType: decimal
+		formatString: #,0.###############\ "zł";-#,0.###############\ "zł";#,0.###############\ "zł"
+		lineageTag: eb453892-8690-4f13-a36e-9540699d5aff
+		summarizeBy: sum
+		sourceColumn: DiscountPct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column Type
+		dataType: string
+		lineageTag: 2780595c-7225-4a6f-a0e5-5cc914062a52
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 99a1e1fa-901e-45c8-aacc-7d4fea88f1d2
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 726fbf61-b746-4160-a1e7-1fded97c3dfd
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c461f3ce-0243-4c71-ab48-b72898009878
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinQty
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d884321-5890-4838-8846-916ba417aceb
+		summarizeBy: sum
+		sourceColumn: MinQty
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxQty
+		dataType: int64
+		formatString: 0
+		lineageTag: 337306d0-76cc-4a28-ad36-54ec5f9a5bd8
+		summarizeBy: sum
+		sourceColumn: MaxQty
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: a59166fe-b300-4ced-a663-b9a184dc813e
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 213bf64a-9b29-46e0-a012-323097d1db31
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Special Offer-0e6085d3-ec94-4580-af6f-0e13e89aad0e' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_SpecialOffer1 = Source{[Schema="Sales",Item="SpecialOffer"]}[Data]
+				in
+				    Sales_SpecialOffer1
+
+	annotation PBI_ResultType = Table
+

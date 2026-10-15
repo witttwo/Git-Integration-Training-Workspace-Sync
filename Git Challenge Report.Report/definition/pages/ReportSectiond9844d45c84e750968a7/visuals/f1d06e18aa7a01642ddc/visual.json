@@ -1,0 +1,219 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "f1d06e18aa7a01642ddc",
+  "position": {
+    "x": 38.82352941176471,
+    "y": 569.41176470588232,
+    "z": 5000,
+    "height": 384.70588235294116,
+    "width": 843.52941176470586,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": " Etap 1: Praca u siebie",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "16pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Zaczynacie od tego, że każda drużyna tworzy **jedną wspólną gałąź** (np. `dev1`) odbitą od głównej gałęzi `dev`.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cała drużyna pracuje razem na tej jednej gałęzi, wykonując swoje niezależne zadania z pierwszego etapu.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pamiętajcie aby podzielić pracę w zespole pomiędzy siebie. Niech każdy ma swój kawałek. ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Kiedy skończycie, robicie merge swojej gałęzi z powrotem do `dev` i dajecie znać reszcie.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Uwaga: Na pewno wystąpią konflikty i waszym zadaniem będzie rozwiązanie ich",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Etap 2: Praca na cudzym kodzie",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "16pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Zaczyna się, gdy wszyscy skończą Etap 1. Tutaj będzie ważna koordynacja i dobre opisy commit/merge.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Pobieracie aktualny stan gałęzi `dev` (gdzie jest już wciągnięta praca wszystkich szkół) na swoją gałąź.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Wykonujecie zadania z rundy 2, które wymagają wykorzystania pracy innych drużyn (np. robicie wykresy na cudzych miarach i kalendarzu).",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Na koniec znów merge do `dev` i wspólne scalenie całości do `main`.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Report Desc'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

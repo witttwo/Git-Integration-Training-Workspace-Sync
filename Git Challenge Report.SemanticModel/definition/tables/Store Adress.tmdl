@@ -1,0 +1,128 @@
+table 'Store Adress'
+	lineageTag: 1737c29d-36fb-41d0-844f-9aa269bde187
+
+	column BusinessEntityID
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f1aad68-049d-451f-8f65-10e087faf26d
+		summarizeBy: none
+		sourceColumn: BusinessEntityID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 6acbf80e-1506-4c08-ae17-3ffa57af83ab
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressType
+		dataType: string
+		lineageTag: b0aed9c0-2e56-46d5-ba63-90f6e3db2777
+		summarizeBy: none
+		sourceColumn: AddressType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Store Adress","TableItemName":"SalesType","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column AddressLine1
+		dataType: string
+		lineageTag: c36c163a-965a-4d53-844c-30020ce6b936
+		summarizeBy: none
+		sourceColumn: AddressLine1
+
+		annotation SummarizationSetBy = Automatic
+
+	column AddressLine2
+		dataType: string
+		lineageTag: 45d26c7b-5367-4503-b214-1c95ff498be3
+		summarizeBy: none
+		sourceColumn: AddressLine2
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 3bd14d73-8de3-400e-b888-b2993f288629
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceName
+		dataType: string
+		lineageTag: 69659051-025e-4d64-b132-4d8132dc71b1
+		summarizeBy: none
+		sourceColumn: StateProvinceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostalCode
+		dataType: string
+		lineageTag: 91163466-367e-477e-ab20-a793dbcc79b0
+		summarizeBy: none
+		sourceColumn: PostalCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegionName
+		dataType: string
+		lineageTag: ecc37a42-8dba-435a-a060-2fcf8edf41e6
+		summarizeBy: none
+		sourceColumn: CountryRegionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesType =
+			SWITCH(
+			  TRUE,
+			  ISBLANK('Store Adress'[AddressType]),
+			  "(Blank)",
+			  'Store Adress'[AddressType] IN {"Shipping"},
+			  "Internet",
+			  'Store Adress'[AddressType] IN {"Main Office"},
+			  "Stationary",
+			  'Store Adress'[AddressType]
+			)
+		lineageTag: 0098ce67-2664-448e-a79e-acc7b7f92b4b
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Store Adress"
+				          }
+				        },
+				        "Property": "AddressType"
+				      }
+				    }
+				  ]
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"s","Entity":"Store Adress"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"AddressType"}}],"GroupItems":[{"DisplayName":"(Blank)","BlankDefaultPlaceholder":true},{"DisplayName":"Internet","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"AddressType"}}],"Values":[[{"Literal":{"Value":"'Shipping'"}}]]}}},{"DisplayName":"Stationary","Expression":{"In":{"Expressions":[{"Column":{"Expression":{"SourceRef":{"Source":"s"}},"Property":"AddressType"}}],"Values":[[{"Literal":{"Value":"'Main Office'"}}]]}}}]}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Store Adress-ed3190f1-b925-466f-92d8-4560e7892219' = m
+		mode: import
+		queryGroup: Person
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_vStoreWithAddresses = Source{[Schema="Sales",Item="vStoreWithAddresses"]}[Data],
+				    #"Removed Duplicates" = Table.Distinct(Sales_vStoreWithAddresses, {"BusinessEntityID"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

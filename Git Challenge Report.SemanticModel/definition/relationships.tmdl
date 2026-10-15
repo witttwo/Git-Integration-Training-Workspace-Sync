@@ -1,0 +1,44 @@
+relationship 605685e9-8369-42b3-b71a-21b1fbafc753
+	fromColumn: 'Sales Order Header'.CurrencyRateID
+	toColumn: 'Currency Rate'.CurrencyRateID
+
+relationship 56edf3ba-eb1a-4558-96d6-26b863252dd4
+	fromColumn: 'Sales Order Header'.CustomerID
+	toColumn: Customer.CustomerID
+
+relationship b2ef46f1-1d8a-4c83-9381-ebea6c3aa2c1
+	fromColumn: 'Sales Order Detail'.SalesOrderID
+	toColumn: 'Sales Order Header'.SalesOrderID
+
+relationship 8603c390-bc47-4808-a986-c2bbdf53d68f
+	fromColumn: 'Sales Order Header Sales Reason'.SalesOrderID
+	toColumn: 'Sales Order Header'.SalesOrderID
+
+relationship d931b76e-2c80-47ac-bca7-37d8eccb9a56
+	fromColumn: 'Sales Order Header Sales Reason'.SalesReasonID
+	toColumn: 'Sales Reason'.SalesReasonID
+
+relationship 30cc8c56-4465-4eca-9a0a-197893f4a678
+	fromColumn: 'Sales Order Detail'.ProductID
+	toColumn: Product.ProductID
+
+relationship ef7faeda-1734-4901-92a1-513c4338df3a
+	fromColumn: 'Sales Order Header'.ShipToAddressID
+	toColumn: Adress.AddressID
+
+relationship 984a380d-0bcb-4ba2-9e59-31bfa76a0f94
+	fromColumn: 'State and Province'.CountryRegionCode
+	toColumn: 'Country and Region'.CountryRegionCode
+
+relationship 5c0d9252-62d4-4964-a5f0-0a3b5f95fd39
+	fromColumn: 'Sales Order Header'.OrderDate
+	toColumn: Calendar.DateSwitch
+
+relationship c92d76bf-0270-4990-a298-b7d833384342
+	fromColumn: Customer.StoreID
+	toColumn: Store.BusinessEntityID
+
+relationship f5cab29f-1b41-4821-b529-579fd44c1d8c
+	fromColumn: Store.BusinessEntityID
+	toColumn: 'Store Adress'.BusinessEntityID
+

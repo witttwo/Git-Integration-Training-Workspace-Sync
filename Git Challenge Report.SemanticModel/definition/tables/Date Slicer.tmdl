@@ -1,0 +1,22 @@
+table 'Date Slicer'
+	lineageTag: d7113368-5947-4e92-a2b8-e568a315d7de
+
+	column 'End of Month'
+		formatString: Long Date
+		lineageTag: 0e219b88-2234-4ecd-adc6-ee06cd219600
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: Calendar[End of Month]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Date Slicer-7f9a8c33-8ec2-4f0d-b3a6-5204f7cb4d2a' = calculated
+		mode: import
+		source =
+				
+				DISTINCT('Calendar'[End of Month])
+
+	annotation PBI_Id = 62d10ff6f4fc4f04945ae8e42e48d6f7
+

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "9a9d60a7e164a8782d29",
+  "position": {
+    "x": 38.571428571428577,
+    "y": 337.14285714285717,
+    "z": 1000,
+    "height": 187.14285714285717,
+    "width": 830,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Szablon raportu",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "16pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "To jest szablon na, którym będziecie pracowali. Część rzeczy została usunięta i trzeba dorobić, lub wprowadzić poprawki. Macie pełną dowolność co do tworzenia stron, ale strona w laptopie może być pewnym wzorcem. ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Możecie tworzyć swoje miare, używać innych - liczymy na waszą kreatywność. Pamiętajcie, że nie liczy się jakość samego raportu a sam proces współpracy oraz to aby raport działał po pobraniu. ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1a1a1a"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Wszelkie chwyty dozwolone, możecie korzystać też z AI a nawet zalecane. Wazne tylko aby każdy robił swoje. "
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Report Desc'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

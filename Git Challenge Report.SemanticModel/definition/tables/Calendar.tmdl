@@ -1,0 +1,340 @@
+table Calendar
+	lineageTag: 90b25273-76de-454f-8f5b-d082bad76aa1
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		lineageTag: 4c90cc5f-766e-4408-8b1f-bddf1efa348d
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Start of Year'
+		dataType: dateTime
+		lineageTag: c9b46c60-5323-4486-8dbd-62d3f7f7dff5
+		summarizeBy: none
+		sourceColumn: Start of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'End of Year'
+		dataType: dateTime
+		lineageTag: e9ab5724-a30b-4eab-9756-fc589ac72326
+		summarizeBy: none
+		sourceColumn: End of Year
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: bc2520e4-0b3a-4cdc-8237-26ce9256c1df
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Month'
+		dataType: dateTime
+		lineageTag: 7d318e1a-f09c-4159-a659-113a7457a67a
+		summarizeBy: none
+		sourceColumn: Start of Month
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'End of Month'
+		dataType: dateTime
+		lineageTag: fda7e51c-619c-40a8-909b-b9a2d609e74f
+		summarizeBy: none
+		sourceColumn: End of Month
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Days in Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 86eb8aac-58cf-4926-a25e-bfde3b825598
+		summarizeBy: none
+		sourceColumn: Days in Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day Name'
+		dataType: string
+		lineageTag: 6b1c7078-6267-4c72-b116-430799e19f06
+		summarizeBy: none
+		sourceColumn: Day Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: a3f7d1ab-d3d6-4c44-938b-c80fdf9399ce
+		summarizeBy: none
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: aaecb83c-a90f-4af1-bce0-af7df371b79b
+		summarizeBy: none
+		sourceColumn: Day of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: 14f2f35f-c39d-4b18-bb03-82cf950eac08
+		summarizeBy: none
+		sourceColumn: Month Name
+		sortByColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Quarter'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 97d5c428-1185-4aeb-85a7-5d9656623d58
+		summarizeBy: none
+		sourceColumn: Start of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Quarter'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9ec4b0a3-e75e-4ff0-b996-92765925da97
+		summarizeBy: none
+		sourceColumn: End of Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Week of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 325d4ace-f47e-49a6-9996-8df28de03f0f
+		summarizeBy: none
+		sourceColumn: Week of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: c95095ad-bb79-4208-bc89-ac8d052688ee
+		summarizeBy: none
+		sourceColumn: Week of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Week'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aa480afa-93ae-48d4-bd94-19bdff9f019c
+		summarizeBy: none
+		sourceColumn: Start of Week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'End of Week'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 126ddc9a-1c60-4b19-81c0-c02f0f95b6c7
+		summarizeBy: none
+		sourceColumn: End of Week
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateSwitch
+		dataType: dateTime
+		lineageTag: f938f34a-7507-4dfe-b00d-2b8dcaea86c3
+		summarizeBy: none
+		sourceColumn: DateSwitch
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Month Name Year'
+		dataType: string
+		lineageTag: 328c6b73-644f-44d4-85cd-701542255406
+		summarizeBy: none
+		sourceColumn: Month Name Year
+		sortByColumn: 'Start of Month'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b6b2963a-206d-4b4e-bd5a-9e0ed02c9e84
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rok
+		dataType: int64
+		formatString: 0
+		lineageTag: 0a08106d-d4b8-4d44-a39f-a4c1c59f0348
+		summarizeBy: none
+		sourceColumn: Rok
+
+		annotation SummarizationSetBy = Automatic
+
+	column Miesiąc
+		dataType: int64
+		formatString: 0
+		lineageTag: 997cf2ea-8cb4-48cd-93f5-3324fc6f2f63
+		summarizeBy: none
+		sourceColumn: Miesiąc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 579dd151-bf1d-43fe-bf75-59ec5f71fd37
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nazwa miesiąca'
+		dataType: string
+		lineageTag: b5db6f11-2f8a-4f8f-9db3-18f113b46b1f
+		summarizeBy: none
+		sourceColumn: Nazwa miesiąca
+		sortByColumn: Miesiąc
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ea89cc8-52d8-46d0-992f-c6d0c3d08d54
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kwartał
+		dataType: int64
+		formatString: 0
+		lineageTag: 0db07872-c451-4f0a-839d-b3f2449f9d0f
+		summarizeBy: none
+		sourceColumn: Kwartał
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'Rok > Kwartał > Miesiąc'
+		lineageTag: 6ea5f531-9bd0-4fce-8d51-9f37bdce93a8
+
+		level Rok
+			lineageTag: f95d56a0-f325-426f-b533-186e5f795022
+			column: Rok
+
+		level Kwartał
+			lineageTag: b12822b8-bafb-4fd4-905e-6a3e36fd5b3f
+			column: Kwartał
+
+		level Miesiąc
+			lineageTag: 064f0ecf-c6f1-40f2-a6eb-8f3d2124cf9b
+			column: Miesiąc
+
+	partition Calendar-942da334-4065-4391-9186-c29f90a9be42 = m
+		mode: import
+		source = ```
+				let
+				    // configurations start
+				    //Today=DateTime.LocalNow(), // today's date
+				    //FromYear = 2011, // set the start year of the date dimension. dates start from 1st of January of this year
+				    //ToYear=2015, // set the end year of the date dimension. dates end at 31st of December of this year
+				    StartofFiscalYear=7, // set the month number that is start of the financial year. example; if fiscal year start is July, value is 7
+				    firstDayofWeek=Day.Monday, // set the week's start day, values: Day.Monday, Day, Sunday....
+				     //configuration end
+				    
+				    FromDate=#date(2011,1,1),
+				    ToDate= Date.EndOfMonth(DateTime.Date(DateTime.LocalNow())),
+				
+				    Source=List.Dates(
+				        FromDate,
+				        Duration.Days(ToDate-FromDate)+1,
+				        #duration(1,0,0,0)
+				    ),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Date"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Date", type date}}),
+				    #"Inserted Year" = Table.AddColumn(#"Changed Type", "Year", each Date.Year([Date]), Int64.Type),
+				    #"Inserted Rok" = Table.AddColumn(#"Inserted Year", "Rok", each [Year], Int64.Type),
+				    #"Inserted Start of Year" = Table.AddColumn(#"Inserted Rok", "Start of Year", each Date.StartOfYear([Date]), type date),
+				    #"Inserted End of Year" = Table.AddColumn(#"Inserted Start of Year", "End of Year", each Date.EndOfYear([Date]), type date),
+				    #"Inserted Month" = Table.AddColumn(#"Inserted End of Year", "Month", each Date.Month([Date]), Int64.Type),
+				    #"Inserted Miesiąc" = Table.AddColumn(#"Inserted Month", "Miesiąc", each [Month], Int64.Type),
+				    #"Inserted Start of Month" = Table.AddColumn(#"Inserted Miesiąc", "Start of Month", each Date.StartOfMonth([Date]), type date),
+				    #"Inserted End of Month" = Table.AddColumn(#"Inserted Start of Month", "End of Month", each Date.EndOfMonth([Date]), type date),
+				    #"Inserted Days in Month" = Table.AddColumn(#"Inserted End of Month", "Days in Month", each Date.DaysInMonth([Date]), Int64.Type),
+				    #"Inserted Day" = Table.AddColumn(#"Inserted Days in Month", "Day", each Date.Day([Date]), Int64.Type),
+				    #"Inserted Day Name" = Table.AddColumn(#"Inserted Day", "Day Name", each Date.DayOfWeekName([Date], "en-US"), type text),
+				    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Day Name", "Day of Week", each Date.DayOfWeek([Date]), Int64.Type),
+				    #"Inserted Day of Year" = Table.AddColumn(#"Inserted Day of Week", "Day of Year", each Date.DayOfYear([Date]), Int64.Type),
+				    #"Inserted Month Name" = Table.AddColumn(#"Inserted Day of Year", "Month Name", each Date.MonthName([Date], "en-US"), type text),
+				    #"Inserted Nazwa miesiąca" = Table.AddColumn(#"Inserted Month Name", "Nazwa miesiąca", each [Month Name], type text),
+				    #"Inserted Quarter" = Table.AddColumn(#"Inserted Nazwa miesiąca", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+				    #"Inserted Kwartał" = Table.AddColumn(#"Inserted Quarter", "Kwartał", each [Quarter], Int64.Type),
+				    #"Inserted Start of Quarter" = Table.AddColumn(#"Inserted Kwartał", "Start of Quarter", each Date.StartOfQuarter([Date]), type date),
+				    #"Inserted End of Quarter" = Table.AddColumn(#"Inserted Start of Quarter", "End of Quarter", each Date.EndOfQuarter([Date]), type date),
+				    #"Inserted Week of Year" = Table.AddColumn(#"Inserted End of Quarter", "Week of Year", each Date.WeekOfYear([Date],firstDayofWeek), Int64.Type),
+				    #"Inserted Week of Month" = Table.AddColumn(#"Inserted Week of Year", "Week of Month", each Date.WeekOfMonth([Date],firstDayofWeek), Int64.Type),
+				    #"Inserted Start of Week" = Table.AddColumn(#"Inserted Week of Month", "Start of Week", each Date.StartOfWeek([Date],firstDayofWeek), type date),
+				    #"Inserted End of Week" = Table.AddColumn(#"Inserted Start of Week", "End of Week", each Date.EndOfWeek([Date],firstDayofWeek), type date),
+				    #"Inserted DateSwitch" = Table.AddColumn(#"Inserted End of Week", "DateSwitch", each Date.AddYears([Date], -7), type date),
+				    #"Removed Duplicates" = Table.Distinct(#"Inserted DateSwitch", {"DateSwitch"}),
+				    #"Inserted Merged Column" = Table.AddColumn(#"Removed Duplicates", "Month Name Year", each Text.Combine({[Month Name], Text.From([Year], "en-US")}, " "), type text)
+				in
+				    #"Inserted Merged Column"
+				```
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

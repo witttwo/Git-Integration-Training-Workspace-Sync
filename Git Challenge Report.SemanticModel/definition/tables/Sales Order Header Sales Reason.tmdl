@@ -1,0 +1,44 @@
+table 'Sales Order Header Sales Reason'
+	lineageTag: 2a84cf7e-d4db-4ad9-aba3-b567f31deef5
+
+	column SalesOrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 849566a3-087d-4ee3-b21f-76f443e27fc8
+		summarizeBy: none
+		sourceColumn: SalesOrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesReasonID
+		dataType: int64
+		formatString: 0
+		lineageTag: df8c7090-feb9-41d9-aa90-187b83311502
+		summarizeBy: none
+		sourceColumn: SalesReasonID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6505befb-31e0-4bcf-840e-7392e664b6ad
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Order Header Sales Reason-17ba8a94-c60d-489f-8110-5e522bd4ff38' = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_SalesOrderHeaderSalesReason1 = Source{[Schema="Sales",Item="SalesOrderHeaderSalesReason"]}[Data]
+				in
+				    Sales_SalesOrderHeaderSalesReason1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

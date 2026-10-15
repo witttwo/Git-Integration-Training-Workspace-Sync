@@ -1,0 +1,116 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "1.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "calendar.month_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar",
+			        "ConceptualProperty": "Month Name"
+			      },
+			      "State": "Generated"
+			    },
+			    "projects_basic_info.project_code": {
+			      "Binding": {
+			        "ConceptualEntity": "Projects basic info",
+			        "ConceptualProperty": "Project code"
+			      },
+			      "State": "Generated"
+			    },
+			    "date_slicer.end_of_month": {
+			      "Binding": {
+			        "ConceptualEntity": "Date Slicer",
+			        "ConceptualProperty": "End of Month"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_ak.title_tooltip_variance_to_target__mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Variance to Target % MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_ak.title_tooltip_variance_to_target_mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Variance to Target MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_ak.title_tooltip_target_mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Target MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_ak.title_tooltip_sales_mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Sales MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_ak.title_tooltip_variance_to_sales_py__mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Variance to Sales PY % MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_ak.title_tooltip_profitability__mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Profitability % MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "switch_mtd_ytd.type": {
+			      "Binding": {
+			        "ConceptualEntity": "_Perspective Switch",
+			        "ConceptualProperty": "Type"
+			      },
+			      "State": "Generated"
+			    },
+			    "product.product_subcategory": {
+			      "Binding": {
+			        "ConceptualEntity": "Product",
+			        "ConceptualProperty": "Product Subcategory"
+			      },
+			      "State": "Generated"
+			    },
+			    "product.name": {
+			      "Binding": {
+			        "ConceptualEntity": "Product",
+			        "ConceptualProperty": "Product Name"
+			      },
+			      "State": "Generated"
+			    },
+			    "adress.state_province": {
+			      "Binding": {
+			        "ConceptualEntity": "Adress",
+			        "ConceptualProperty": "State Province"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures.title_tooltip_profit_mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Profit MTD/YTD"
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures.title_tooltip_cost_mtd_ytd": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures",
+			        "ConceptualProperty": "Title Tooltip Cost MTD/YTD"
+			      },
+			      "State": "Generated"
+			    }
+			  }
+			}
+		contentType: json
+

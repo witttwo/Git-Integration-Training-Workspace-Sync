@@ -1,0 +1,38 @@
+table Table
+	lineageTag: aab6deeb-7a53-4696-9f0c-de2ba7c486a2
+
+	column ID
+		dataType: string
+		lineageTag: 7e1bb847-b570-43e6-9b95-b997af4f7cb9
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID2
+		dataType: string
+		lineageTag: 11e9f3c8-b356-4eb4-8a3e-a08215fb6dad
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: ID2
+
+		changedProperty = DataCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table-5b9749c2-bf51-4300-a12f-f5ee4bf992a0 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("bZBBT8MwDIX/ShSJGzRhO0y04oLEENqNHdcdssZtLKVNSNxO+/ektGydxMl6lv35+R0OvOylXFcaBxbpYuG15F5pjV3zRM7nm3UmpXwovItI6Lo8gFWEAxTltAnTPtZBtcBiqBLAEPmYC9FgDSGrXCugPYEWu298KTk7oyaTxp4TOEkD2Bi66dlGwq4217PqFJ3tCYrRlCws1JTKNMR+b7+5oCEkjEwMZa07b3tr91UA6JZOxWT1rpW+X2q/FIqZAPV/X/0lMKBiH5/b96+Zpu7YM4w/XgGY3YIZIxklPx5/AA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [ID = _t, ID2 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"ID", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

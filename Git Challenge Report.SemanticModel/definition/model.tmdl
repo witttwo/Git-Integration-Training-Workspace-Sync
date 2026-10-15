@@ -1,0 +1,79 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup Sales
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup Parameters
+
+	annotation PBI_QueryGroupOrder = 1
+
+queryGroup Production
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup Purchasing
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup Person
+
+	annotation PBI_QueryGroupOrder = 4
+
+/// Errors in queries that were loaded on 09.07.2021 12:50:03.
+queryGroup 'Query Errors - 09 07 2021 12:50:03'
+
+	annotation PBI_QueryGroupOrder = 5
+
+extendedProperty TabularEditor_DeploymentMetadata =
+		{
+		  "User": "AzureAD\\PrzemekHaraźny",
+		  "Time": "2021-05-18T12:30:32.355268+02:00",
+		  "ClientMachine": "HARRY_LAPTOP",
+		  "DeploymentMode": "SaveUI",
+		  "TabularEditorBuild": "2.16.7781.40242"
+		}
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Currency","Currency Rate","Customer","Sales Order Detail","Sales Order Header","Sales Order Header Sales Reason","Sales Reason","Special Offer","Special Offer Product","_Database","_Server","Product","Product Category","Product Subcategory","Adress","Country and Region","Calendar","State and Province","Table","Store","Store Adress","Online Customer","_Measures","Switch Sales and Target","Tooltip","_Perspective Switch","Errors in Calendar"]
+
+annotation __TEdtr = 1
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","TMDLView_Desktop","DevMode","TMDL-Extension"]
+
+annotation __PBI_ServiceStoredInTmdl = reserved
+
+ref table Customer
+ref table Currency
+ref table 'Currency Rate'
+ref table 'Sales Order Detail'
+ref table 'Sales Order Header'
+ref table 'Special Offer'
+ref table 'Special Offer Product'
+ref table 'Sales Order Header Sales Reason'
+ref table 'Sales Reason'
+ref table Product
+ref table 'Country and Region'
+ref table Calendar
+ref table Adress
+ref table 'State and Province'
+ref table Table
+ref table Store
+ref table 'Store Adress'
+ref table 'Online Customer'
+ref table 'Date Slicer'
+ref table _Measures
+ref table 'Switch Sales and Target'
+ref table Tooltip
+ref table '_Perspective Switch'
+ref table 'Product Hierarchy'
+
+ref cultureInfo en-US
+

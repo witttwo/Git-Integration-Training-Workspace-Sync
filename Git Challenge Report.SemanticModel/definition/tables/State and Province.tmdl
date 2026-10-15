@@ -1,0 +1,84 @@
+table 'State and Province'
+	lineageTag: 312b6174-1be8-45a1-96b9-dcaa3cec7274
+
+	column StateProvinceID
+		dataType: int64
+		formatString: 0
+		lineageTag: 83dfd3bd-8aac-4319-978d-e807d345a5f7
+		summarizeBy: count
+		sourceColumn: StateProvinceID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceCode
+		dataType: string
+		lineageTag: 85e0db01-ceff-400d-b36e-48d8d1a84d1c
+		summarizeBy: none
+		sourceColumn: StateProvinceCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryRegionCode
+		dataType: string
+		lineageTag: 4fc01fb5-e118-4681-8d11-14a0812afe78
+		summarizeBy: none
+		sourceColumn: CountryRegionCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsOnlyStateProvinceFlag
+		dataType: string
+		lineageTag: 1b580c58-920f-45de-b656-f8f8cda0cd64
+		summarizeBy: none
+		sourceColumn: IsOnlyStateProvinceFlag
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 03ae2193-642a-46c7-aae7-7f32d24ab11e
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column TerritoryID
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ea3eefa-9e39-4844-9d87-490743051b46
+		summarizeBy: count
+		sourceColumn: TerritoryID
+
+		annotation SummarizationSetBy = Automatic
+
+	column rowguid
+		dataType: string
+		lineageTag: 0d9386d8-7a14-4c36-bc7c-ffc15e91cc3d
+		summarizeBy: none
+		sourceColumn: rowguid
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 12c8d66c-102f-4a26-b403-aaffd7ab57bd
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'State and Province-61af9945-1d52-47a6-b274-b25c99443044' = m
+		mode: import
+		queryGroup: Person
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Person_StateProvince = Source{[Schema="Person",Item="StateProvince"]}[Data]
+				in
+				    Person_StateProvince
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

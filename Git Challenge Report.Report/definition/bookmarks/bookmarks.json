@@ -1,0 +1,118 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "Bookmark2a46e428dc1542902705",
+      "displayName": "CEO 1",
+      "children": [
+        "Bookmark29694bc8a097c70b10b2",
+        "Bookmarkb5acf237066170308e8d",
+        "Bookmark9b6146edbc79d2219086",
+        "Bookmark69c4f43dc0c5f8bcab5a",
+        "Bookmarkbd35498b03d0036226fb",
+        "Bookmark04c667ca5ada86e9c505"
+      ]
+    },
+    {
+      "name": "Bookmark29c79ba15d0f5328efd7",
+      "displayName": "CEO 1 Top 5 / Bottom 5",
+      "children": [
+        "Bookmark2a355a9089900e813543",
+        "Bookmarkb3be847a98fa4ad51599"
+      ]
+    },
+    {
+      "name": "Bookmark4d460967b24a08ceb5aa",
+      "displayName": "CEO 2",
+      "children": [
+        "Bookmarkc4b6400bc064501936a9",
+        "Bookmarkd48c71570bb126763a9c",
+        "Bookmarkc88c82501079097b02e6",
+        "Bookmark793d650858ada41b1d32",
+        "Bookmarkae529e0d6420027a83a5"
+      ]
+    },
+    {
+      "name": "Bookmark2a112fb90a3a09580353",
+      "displayName": "CM 1",
+      "children": [
+        "Bookmark2acdb3e7e8a8a007d6ba",
+        "Bookmark528f793c8a6009079343",
+        "Bookmarke21ec6ebcc003057a9d6",
+        "Bookmarkeba27392a9b0b75e716e",
+        "Bookmarkee6e0826d506bcac6fbe",
+        "Bookmark4193049444321b46c2b1"
+      ]
+    },
+    {
+      "name": "Bookmarkf873bf49d8670a0c4a0e",
+      "displayName": "CM 1  Geography",
+      "children": [
+        "Bookmark82b18d90cb084c86b3c3",
+        "Bookmarkb9437473ed4504de0186"
+      ]
+    },
+    {
+      "name": "Bookmark7a48a040026500e07dee",
+      "displayName": "CM 2",
+      "children": [
+        "Bookmark996e577705040ad8db61",
+        "Bookmark0dabc3f1e608ab00631d",
+        "Bookmarke2168e9fbe03804d1495",
+        "Bookmark1f64a856ed9e0988502b",
+        "Bookmarkf3de987260ae403bbd10"
+      ]
+    },
+    {
+      "name": "Bookmark30fbaceac6972eb09c15",
+      "displayName": "CM 3",
+      "children": [
+        "Bookmark85aaa1e079b02c180409",
+        "Bookmarkc6cb99ff441ba1dc0861",
+        "Bookmark406a64fed43a62ddc005",
+        "Bookmark0806a7b4d5ca956796d5",
+        "Bookmark43334b5c0d909079d927"
+      ]
+    },
+    {
+      "name": "Bookmarke671fb16be060c8000ba",
+      "displayName": "Catman 1",
+      "children": [
+        "Bookmarke3d0b1fa945dc48614bd",
+        "Bookmark4b32d05350bb6861976b",
+        "Bookmarkd8298b4e7871c62141dc",
+        "Bookmark338683eb7b44279340ff",
+        "Bookmark6bad24bdc380913b865a",
+        "Bookmarkf2e933dab6ce544c396e"
+      ]
+    },
+    {
+      "name": "Bookmark065b2049150990a0e05c",
+      "displayName": "Catman 1 Dynamic  / Monthly",
+      "children": [
+        "Bookmarkab255c1870e11407967d",
+        "Bookmark616b38084ccdab7bd7b9"
+      ]
+    },
+    {
+      "name": "Bookmarkd7985b43d243c735212c",
+      "displayName": "Catman 2",
+      "children": [
+        "Bookmark18578d674498e923a459",
+        "Bookmarkef83dc3b11c87e783460",
+        "Bookmark07085589ee4e327041e7",
+        "Bookmark0d776e63362b3b83bde2",
+        "Bookmarkfbf3587a51c04a63d813"
+      ]
+    },
+    {
+      "name": "Bookmark978a7d80d1b07e0848b9",
+      "displayName": "Catman Custom Analysis",
+      "children": [
+        "Bookmark7827f9ca00334ab6080c",
+        "Bookmark48bc46aa206a2b10e839",
+        "Bookmark614cca5a60020ebb595e"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+table Currency
+	lineageTag: ffe219be-4285-41c0-adbc-635f6edfd5f8
+
+	column CurrencyCode
+		dataType: string
+		lineageTag: 32715306-f2e3-4c68-af21-8b12e1e2f154
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 0db3ee30-504e-4ae0-aa00-78febf511941
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column ModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d94fba42-2463-4254-bc69-ee57bcd3cbec
+		summarizeBy: none
+		sourceColumn: ModifiedDate
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Currency-89fcadd9-94ea-43f7-bf5e-0b020763673c = m
+		mode: import
+		queryGroup: Sales
+		source =
+				let
+				    Source = Sql.Database(_Server, _Database),
+				    Sales_Currency1 = Source{[Schema="Sales",Item="Currency"]}[Data]
+				in
+				    Sales_Currency1
+
+	annotation PBI_ResultType = Table
+
